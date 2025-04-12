@@ -14,6 +14,6 @@ def _driver(request):
         opts.add_argument('--disable-notifications')
         driver = webdriver.Edge(options=opts)
     driver.maximize_window()
-    driver.get('https://www.saucedemo.com/')
+    driver.get('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
     yield driver
     driver.quit()

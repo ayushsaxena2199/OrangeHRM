@@ -22,19 +22,18 @@ class SeleniumWrapper:
     def ele_is_displayed(self, logical_name):
         self.driver.find_element(*logical_name).is_displayed()
 
-    def wait_till_ele_is_visible(self, logical_name):
+    def wait_till_ele_is_clickable(self, logical_name):
         ele = self.driver.find_element(*logical_name)
         wait = WebDriverWait(self.driver, 10)
-        wait.until(ec.visibility_of(ele))
+        wait.until(ec.element_to_be_clickable(ele))
 
     def clr_textfield(self, logical_name):
         self.driver.find_element(*logical_name).clear()
 
-
-    def pop_up(self):
-        alert_obj = self.driver.switch_to.alert
-        alert_obj.accept()
-        alert_obj.dismiss()
+    # def pop_up(self):
+    #     alert_obj = self.driver.switch_to.alert
+    #     alert_obj.accept()
+    #     alert_obj.dismiss()
 
 
 
